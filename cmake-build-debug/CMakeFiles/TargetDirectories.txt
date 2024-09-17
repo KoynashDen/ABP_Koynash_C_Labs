@@ -1,0 +1,3 @@
+D:/Projects/ABP-Koynash/cmake-build-debug/CMakeFiles/ABP_Koynash.dir
+D:/Projects/ABP-Koynash/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Projects/ABP-Koynash/cmake-build-debug/CMakeFiles/rebuild_cache.dir
