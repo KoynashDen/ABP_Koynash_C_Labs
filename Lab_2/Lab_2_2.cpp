@@ -9,6 +9,7 @@
 
 double calculate_example(long n) {
     return pow(-1,n) * ((n+1) / pow(2,n-1));
+
 }
 
 
