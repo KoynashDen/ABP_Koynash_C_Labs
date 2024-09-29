@@ -29,7 +29,7 @@ int lab_2_2() {
         if (n==10) {
             cout << "Сума 10 членів ряду = " << sum << endl;
         }
-        if (fabs(term)<eps) {
+        if (fabs(term)<=eps) {
             break;
         }
         sum += term;

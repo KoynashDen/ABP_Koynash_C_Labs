@@ -6,6 +6,7 @@
 #include "Lab_1/Lab_1.cpp"
 #include "Lab_2/Lab_2_1.cpp"
 #include "Lab_2/Lab_2_2.cpp"
+#include "Lab_3/Lab_3.cpp"
 
 
 using namespace std;
@@ -37,6 +38,9 @@ int main() {
                     cout << "Помилка";
 
             }
+            break;
+        case 3:
+            lab_3();
             break;
         default:
             cout << "Помилка!" << endl;
