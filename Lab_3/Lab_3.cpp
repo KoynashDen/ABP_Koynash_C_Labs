@@ -72,6 +72,7 @@ int lab_3() {
         }
     }
     cout << endl;
+    cout << endl;
     for (int i = 0; i < 10; i++) {
         cout << result_mas[i] << " ";
     }
