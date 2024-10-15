@@ -51,6 +51,7 @@ void workWithMatrix(int size, int** arr) {
             arr[i][j] = temp[i][j];
         }
     }
+    delete temp;
 }
 
 
@@ -70,7 +71,7 @@ int lab_6() {
     workWithMatrix(size, arr);
     printMatrix(size, arr);
 
-
+    delete arr;
 
     return 0;
 }
