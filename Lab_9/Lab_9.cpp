@@ -57,24 +57,64 @@ void deleteText(const string &fileName, int lineDelete) {
     }
 
 }
+
+void lineForDisplay(const string &fileName, int lineDisplay) {
+    ifstream file(fileName);
+    string line;
+    int currentLine = 1;
+
+    if (file.is_open()) {
+        while (getline(file, line)) {
+            if (currentLine == lineDisplay) {
+                cout << line << endl;
+                file.close();
+                return;
+            }
+            currentLine++;
+        }
+        file.close();
+    } else {
+        cout << "Unable to open file" << endl;
+    }
+}
 Officess parsing(const string &line) {
-    Officess office = {"none", "none", 0, 0}; // значения по умолчанию
+    Officess office = {"none", "none", 0, 0};
     istringstream stream(line);
     string tokens[4];
     int i = 0;
 
-    // Разделяем строку по пробелам и заполняем массив tokens до 4 элементов
+
     while (stream >> tokens[i] && i < 4) {
         i++;
     }
 
-    // Присваиваем значения полям структуры
+
     if (i >= 1) strncpy(office.name, tokens[0].c_str(), sizeof(office.name) - 1);
     if (i >= 2) strncpy(office.creator, tokens[1].c_str(), sizeof(office.creator) - 1);
     if (i >= 3) office.count = stoi(tokens[2]);
     if (i >= 4) office.cost = stoi(tokens[3]);
 
     return office;
+}
+void doesLineExist(const string &fileName, int lineDisplay) {
+    ifstream file(fileName);
+    string line;
+    int currentLine = 1;
+
+    if (file.is_open()) {
+        while (getline(file, line)) {
+            if (currentLine == lineDisplay) {
+                file.close();
+                cout << "Існує" << endl;
+                return;
+            }
+            currentLine++;
+        }
+        file.close();
+    } else {
+        cout << "Unable to open file" << endl;
+    }
+    cout << "Не існує" << endl;
 }
 
 vector<Officess> prepareForDisplay(const string &fileName) {
@@ -84,7 +124,7 @@ vector<Officess> prepareForDisplay(const string &fileName) {
 
     if (file.is_open()) {
         while (getline(file, line)) {
-            offices.push_back(parsing(line)); // Загружаем строку в структуру и добавляем в вектор
+            offices.push_back(parsing(line));
         }
         file.close();
     } else {
@@ -111,46 +151,66 @@ void display(const vector<Officess> &offices) {
     }
 
     cout << "-------------------------------------------------------" << endl;
+
 }
 
 int lab_9() {
+
     string fileName = "lab_9.txt";
+    ofstream file(fileName, ios_base::app);
+    file.close();
     int numberOfOption;
-    int numberForDelete;
+    int numberFor;
     vector<Officess> offices = prepareForDisplay(fileName);
 
 
 
-
+    start:
     cout << "1.Вивести таблицю"<< endl;
     cout << "2.Додати рядок в кінець" << endl;
     cout << "3.Видалити рядок" << endl;
-    cout << "4.Вийти" << endl;
+    cout << "4.Вивести рядок за номером" << endl;
+    cout << "5.Перевірити чи існує рядок" << endl;
+    cout << "6.Вийти" << endl;
     cin >> numberOfOption;
     switch (numberOfOption) {
         case 1:
+            offices = prepareForDisplay(fileName);
             parsing(fileName);
-
             display(offices);
             break;
         case 2:
+
             addText(fileName);
+            offices = prepareForDisplay(fileName);
             break;
         case 3:
             parsing(fileName);
             display(offices);
             cout << "Номер рядка який видалити:" << endl;
-            cin >> numberForDelete;
-            deleteText(fileName,numberForDelete);
+            cin >> numberFor;
+            deleteText(fileName,numberFor);
+            offices = prepareForDisplay(fileName);
             break;
         case 4:
+            parsing(fileName);
+            display(offices);
+            cout << "Номер рядка який вивести:" << endl;
+            cin >> numberFor;
+            lineForDisplay(fileName,numberFor);
+            break;
+        case 5:
+            cout << "Номер рядка який хочете перевірити:" << endl;
+            cin >> numberFor;
+            doesLineExist(fileName,numberFor);
+            break;
+        case 6:
             break;
         default:
-            cout << "Нема такого рядка" << endl;
-
-
+            cout << "Нема такого номера" << endl;
 
     }
+    goto start;
 
 
 
