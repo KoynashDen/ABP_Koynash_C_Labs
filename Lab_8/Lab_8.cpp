@@ -58,22 +58,7 @@ void printOffices(stack<Offices>& officeStack) {
     cout << "-------------------------------------------------------" << endl;
 }
 
-// void sortOffices(Office offices[], int n) {
-//     for (int i = 0; i < n - 1; i++) {
-//         int minIndex = i;
-//         for (int j = i + 1; j < n; j++) {
-//             if (strcmp(offices[j].name, offices[minIndex].name) < 0) {
-//                 minIndex = j;
-//             }
-//         }
-//
-//         if (minIndex != i) {
-//             Office temp = offices[i];
-//             offices[i] = offices[minIndex];
-//             offices[minIndex] = temp;
-//         }
-//     }
-// }
+
 
 int lab_8() {
     stack<Offices> officeStack;

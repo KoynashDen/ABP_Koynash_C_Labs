@@ -35,6 +35,7 @@ void inputOffices(Office offices[], int& n) {
 }
 
 
+
 void printOffices(Office offices[], int n) {
 
     cout << "-------------------------------------------------------\n";
