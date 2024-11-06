@@ -13,6 +13,7 @@
 #include "Lab_7/Lab_7.cpp"
 #include "Lab_8/Lab_8.cpp"
 #include "Lab_9/Lab_9.cpp"
+#include "Lab_10/Lab_10.cpp"
 
 
 using namespace std;
@@ -65,6 +66,9 @@ int main() {
             break;
         case 9:
             lab_9();
+            break;
+        case 10:
+            lab_10();
             break;
         default:
             cout << "Помилка!" << endl;
