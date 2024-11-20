@@ -8,6 +8,7 @@
 #include <fstream>
 #include "Lab_9.h"
 
+using namespace std;
 struct Officess {
     char name[20];
     char creator[20];
