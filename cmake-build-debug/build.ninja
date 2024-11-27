@@ -55,6 +55,12 @@ build CMakeFiles/ABP_Koynash.dir/main.cpp.obj: CXX_COMPILER__ABP_Koynash_unscann
   OBJECT_DIR = CMakeFiles\ABP_Koynash.dir
   OBJECT_FILE_DIR = CMakeFiles\ABP_Koynash.dir
 
+build CMakeFiles/ABP_Koynash.dir/MK2.cpp.obj: CXX_COMPILER__ABP_Koynash_unscanned_Debug D$:/Projects/ABP-Koynash/MK2.cpp || cmake_object_order_depends_target_ABP_Koynash
+  DEP_FILE = CMakeFiles\ABP_Koynash.dir\MK2.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\ABP_Koynash.dir
+  OBJECT_FILE_DIR = CMakeFiles\ABP_Koynash.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ABP_Koynash
@@ -63,7 +69,7 @@ build CMakeFiles/ABP_Koynash.dir/main.cpp.obj: CXX_COMPILER__ABP_Koynash_unscann
 #############################################
 # Link the executable ABP_Koynash.exe
 
-build ABP_Koynash.exe: CXX_EXECUTABLE_LINKER__ABP_Koynash_Debug CMakeFiles/ABP_Koynash.dir/main.cpp.obj
+build ABP_Koynash.exe: CXX_EXECUTABLE_LINKER__ABP_Koynash_Debug CMakeFiles/ABP_Koynash.dir/main.cpp.obj CMakeFiles/ABP_Koynash.dir/MK2.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ABP_Koynash.dir

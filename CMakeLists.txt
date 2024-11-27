@@ -4,7 +4,8 @@ project(ABP_Koynash)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(ABP_Koynash main.cpp
-
+        MK2.cpp
+        MK2.h
 
 
 )
